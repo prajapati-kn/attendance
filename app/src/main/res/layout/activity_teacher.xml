@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".teacher">
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:text="@string/enter_attendance"
+        android:background="@color/colorPrimary"
+        android:textSize="20sp"
+        android:id="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:onClick="fn"
+        style="@style/CustomFontStyleRed"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:text="@string/add_new_student"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/button2"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="addStudent" />
+
+    <Button
+        android:layout_width="300dp"
+        android:textColor="#FFFFFF"
+        android:layout_height="80dp"
+        android:textSize="20sp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/button4"
+        android:layout_below="@+id/button2"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginTop="30dp"
+        android:text="@string/view_student_details"
+        android:onClick="viewStudent" />
+</RelativeLayout>
+
