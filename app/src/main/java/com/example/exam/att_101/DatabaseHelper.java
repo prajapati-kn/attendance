@@ -24,7 +24,7 @@ public static final String DATABASE_NAME = "student.db";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,rollno INTEGER,dept TEXT,attendance INTEGER)");
+        db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,rollno INTEGER,dept TEXT,attendance  INTEGER DEFAULT(0))");
     }
 
     @Override
@@ -48,5 +48,14 @@ public static final String DATABASE_NAME = "student.db";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
+    }
+    public void update(int[] ids,int numRows) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        for (int i=0,m=0;i<numRows;i++) {
+
+            Cursor res = db.rawQuery("update "+TABLE_NAME+" set attendance = attendance+1 where ID ="+ids[m],null);
+
+        }
     }
 }
