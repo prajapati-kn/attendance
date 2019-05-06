@@ -15,7 +15,7 @@
         android:id="@+id/button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:onClick="fn"
+        android:onClick="enterAttendance"
         style="@style/CustomFontStyleRed"
         />
 
