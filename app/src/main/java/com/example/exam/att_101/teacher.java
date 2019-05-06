@@ -12,6 +12,10 @@ public class teacher extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher);
     }
+    public void enterAttendance(View view) {
+        Intent myIntent = new Intent(this, attendance_register.class);
+        this.startActivity(myIntent);
+    }
     public void addStudent(View view) {
         Intent myIntent = new Intent(this, add_student.class);
         this.startActivity(myIntent);
@@ -20,4 +24,5 @@ public class teacher extends AppCompatActivity {
         Intent myIntent = new Intent(this, student_info.class);
         this.startActivity(myIntent);
     }
+
 }
