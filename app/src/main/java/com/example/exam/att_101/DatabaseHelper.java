@@ -54,7 +54,9 @@ public static final String DATABASE_NAME = "student.db";
         ContentValues contentValues = new ContentValues();
         for (int i=0,m=0;i<numRows;i++) {
 
-            Cursor res = db.rawQuery("update "+TABLE_NAME+" set attendance = attendance+1 where ID ="+ids[m],null);
+            Cursor c = db.rawQuery("update "+TABLE_NAME+" set attendance = attendance+1 where ID ="+ids[m],null);
+             c.moveToFirst();
+            c.close();
 
         }
     }
