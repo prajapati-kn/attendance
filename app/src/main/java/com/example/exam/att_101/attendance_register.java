@@ -58,8 +58,20 @@ public class attendance_register extends AppCompatActivity {
 
 
     }
+    View.OnClickListener storeId(final Button button){
+        return new View.OnClickListener(){
+            public void onClick(View v ){
+
+                ids[m]=button.getId();
+                m++;
+
+                Log.d("karan", String.valueOf(ids[m-1]));
+
+            }
+        };
+    }
     public void submitAtt(View view) {
-        Cursor res = myDb.getAllData();
+      /*  Cursor res = myDb.getAllData();
         int idIndex = res.getColumnIndex("ID");
         for (int i=0,m=0;i<numRows;i++) {
             view2 = (View) view.getParent().getParent();
@@ -74,7 +86,7 @@ public class attendance_register extends AppCompatActivity {
 
             }
             res.moveToNext();
-        }
+        }*/
 
 
         myDb.update(ids,numRows);
